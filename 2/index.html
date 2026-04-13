@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>مجموعة يوسف الرشود | YRG - الريادة والتنوع والاستدامة</title>
-    <!-- Google Fonts -->
+    <!-- Google Fonts: استخدام خط حديث وجميل يشبه خطوط الصور -->
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
@@ -21,6 +21,7 @@
             line-height: 1.5;
         }
 
+        /* ألوان مستوحاة من الفخامة والتراث */
         :root {
             --gold: #C9A03D;
             --gold-light: #e8c97a;
@@ -28,51 +29,7 @@
             --card-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
             --border-radius: 1.2rem;
         }
-
-        /* شريط التنقل */
-        .navbar {
-            background: rgba(15, 15, 20, 0.96);
-            backdrop-filter: blur(8px);
-            padding: 0.8rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(201, 160, 61, 0.3);
-        }
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .logo-area img {
-            height: 48px;
-            width: auto;
-            border-radius: 8px;
-        }
-        .logo-area span {
-            color: var(--gold);
-            font-weight: 700;
-            font-size: 1.3rem;
-            letter-spacing: 1px;
-        }
-        .nav-links a {
-            color: #f5f5f5;
-            text-decoration: none;
-            margin-right: 28px;
-            font-weight: 500;
-            transition: 0.3s;
-            font-size: 1rem;
-        }
-        .nav-links a:hover {
-            color: var(--gold);
-        }
-
-        /* قسم السلايدر - بدون تراكب داكن */
-        .hero-slider {
+           .hero-slider {
             margin-top: 70px;
             position: relative;
             width: 100%;
@@ -123,8 +80,7 @@
             background-color: var(--gold);
             transform: scale(1.2);
         }
-
-        /* النص الموضوع أسفل السلايدر */
+       /* النص الموضوع أسفل السلايدر */
         .hero-text-under {
             text-align: center;
             padding: 2rem 1rem 2.5rem;
@@ -146,7 +102,90 @@
             margin: 0 auto;
         }
 
-        /* باقي الأقسام */
+        /* شريط التنقل */
+        .navbar {
+            background: rgba(15, 15, 20, 0.96);
+            backdrop-filter: blur(8px);
+            padding: 0.8rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(201, 160, 61, 0.3);
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-area img {
+            height: 48px;
+            width: auto;
+            border-radius: 8px;
+        }
+        .logo-area span {
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+        }
+        .nav-links a {
+            color: #f5f5f5;
+            text-decoration: none;
+            margin-right: 28px;
+            font-weight: 500;
+            transition: 0.3s;
+            font-size: 1rem;
+        }
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        /* قسم البطل - صورة Picture1.png كواجهة رئيسية ضخمة */
+        .hero-banner {
+            margin-top: 70px;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2418 100%);
+            padding: 2rem 1rem 3rem;
+            text-align: center;
+            border-bottom: 3px solid var(--gold);
+        }
+        .hero-image {
+            max-width: 95%;
+            width: 1200px;
+            margin: 0 auto;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 30px 45px rgba(0,0,0,0.3);
+            border: 2px solid var(--gold);
+            background: #fff;
+        }
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+            max-height: 75vh;
+        }
+        .hero-text {
+            margin-top: 2rem;
+        }
+        .hero-text h1 {
+            font-size: 2.8rem;
+            color: var(--gold);
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        .hero-text p {
+            font-size: 1.2rem;
+            color: #f0ede8;
+            max-width: 700px;
+            margin: 0.8rem auto 0;
+        }
+
+        /* الأقسام العامة */
         .container {
             max-width: 1300px;
             margin: 0 auto;
@@ -164,7 +203,7 @@
             color: var(--gold);
         }
 
-        /* بطاقات التعريف */
+        /* بطاقات التعريف (مقدمة المجموعة من Picture2) */
         .intro-cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -185,6 +224,10 @@
             margin-bottom: 0.8rem;
             color: #2c2c2c;
         }
+        .intro-card h3 i {
+            color: var(--gold);
+            margin-left: 8px;
+        }
         .intro-card .sub {
             font-weight: 600;
             color: var(--gold);
@@ -199,8 +242,11 @@
             padding-right: 1.2rem;
             margin-top: 0.8rem;
         }
+        .intro-card li {
+            margin-bottom: 0.5rem;
+        }
 
-        /* أقسام القطاعات التفصيلية */
+        /* أقسام القطاعات التفصيلية (نمط الصور 4-9) */
         .sector-detail {
             background: #fffef9;
             border-radius: 2rem;
@@ -220,17 +266,16 @@
         .sector-img {
             flex: 1.2;
             min-width: 280px;
-            overflow: hidden;
+            background: #faf5ea;
+            padding: 1.5rem;
+            text-align: center;
         }
         .sector-img img {
             width: 100%;
-            height: 280px;
-            object-fit: cover;
-            display: block;
-            transition: transform 0.3s ease;
-        }
-        .sector-img img:hover {
-            transform: scale(1.02);
+            max-width: 380px;
+            border-radius: 28px;
+            box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+            border: 1px solid var(--gold);
         }
         .sector-content {
             flex: 2;
@@ -269,7 +314,7 @@
             margin-bottom: 0.6rem;
         }
 
-        /* لماذا تختارنا */
+        /* قسم "لماذا تختار" من Picture3 */
         .why-us {
             background: linear-gradient(120deg, #fbf7ef, #fff7e8);
             border-radius: 2rem;
@@ -307,7 +352,7 @@
             color: #4a4a5a;
         }
 
-        /* التواصل */
+        /* قسم التواصل من Picture10 */
         .contact-section {
             background: #0f0f14;
             color: #e5e5e5;
@@ -400,7 +445,7 @@
 <header class="navbar">
     <div class="logo-area">
         <img src="logo.jpg" alt="شعار يوسف الرشود" onerror="this.style.display='none'">
-      
+        
     </div>
     <div class="nav-links">
         <a href="#intro">عن المجموعة</a>
@@ -410,7 +455,21 @@
     </div>
 </header>
 
-<!-- السلايدر فقط (بدون تراكب) -->
+<!-- القسم الرئيسي: واجهة Picture1.png كبيرة وواضحة -->
+
+
+<!-- 
+<section class="hero-banner">
+    <div class="hero-image">
+        <img src="Picture1.png" alt="مجموعة يوسف الرشود - الواجهة الرئيسية للقطاعات">
+    </div>
+    <div class="hero-text">
+        <h1>مجموعة يوسف الرشود (YRG)</h1>
+        <p>ريادة • تنوع • استدامة | منذ 2024</p>
+    </div>
+</section>
+-->
+
 <section class="hero-slider">
     <div class="slider-container">
         <div class="slider-images" id="sliderImages">
@@ -434,8 +493,7 @@
     <h1>مجموعة يوسف الرشود <span>(YRG)</span></h1>
     <p>ريادة • تنوع • استدامة | منذ 2024</p>
 </div>
-
-<!-- قسم المقدمة -->
+<!-- قسم المقدمة من Picture2 (النقاط 1-3 والعبارات الكاملة) -->
 <section id="intro" class="container">
     <div class="section-title"><span>مقدمة</span> المجموعة</div>
     <div class="intro-cards">
@@ -473,15 +531,15 @@
     </div>
 </section>
 
-<!-- القطاعات التفصيلية (الستة كاملة) -->
+<!-- القطاعات التفصيلية بالكامل (صور 4-9) -->
 <section id="sectors" class="container">
     <div class="section-title"> <span>قطاعاتنا</span></div>
 
-    <!-- 1. قطاع المقاولات والعقار -->
+    <!-- قطاع المقاولات (Picture4) -->
     <div class="sector-detail">
         <div class="sector-flex">
             <div class="sector-img">
-                <img src="construction.jpg" alt="مقاولات وعقار" onerror="this.src='https://placehold.co/600x400/eee/gold?text=Construction'">
+                <img src="Picture4.png" alt="مقاولات وعقار" onerror="this.src='construction.jpg'">
             </div>
             <div class="sector-content">
                 <h2>قطاع المقاولات والعقار <small>YRG Construction</small></h2>
@@ -497,11 +555,11 @@
         </div>
     </div>
 
-    <!-- 2. قطاع العود والبخور والعطور -->
+    <!-- قطاع العود (Picture5) -->
     <div class="sector-detail">
         <div class="sector-flex">
             <div class="sector-img">
-                <img src="oud.jpeg" alt="عود وعطور" onerror="this.src='https://placehold.co/600x400/eee/gold?text=Oud'">
+                <img src="Picture5.png" alt="عود وعطور" onerror="this.src='oud.jpeg'">
             </div>
             <div class="sector-content">
                 <h2>قطاع العود والبخور والعطور</h2>
@@ -517,11 +575,11 @@
         </div>
     </div>
 
-    <!-- 3. قطاع الموضة والملابس -->
+    <!-- قطاع الموضة (Picture6) -->
     <div class="sector-detail">
         <div class="sector-flex">
             <div class="sector-img">
-                <img src="fashion.jpeg" alt="YRG Fashion" onerror="this.src='https://placehold.co/600x400/eee/gold?text=Fashion'">
+                <img src="Picture6.png" alt="YRG Fashion" onerror="this.src='fashion.jpeg'">
             </div>
             <div class="sector-content">
                 <h2>قطاع الموضة والملابس <small>YRG FASHION</small></h2>
@@ -537,11 +595,11 @@
         </div>
     </div>
 
-    <!-- 4. قطاع المنتجات الطبيعية والعسل -->
+    <!-- قطاع العسل (Picture7) -->
     <div class="sector-detail">
         <div class="sector-flex">
             <div class="sector-img">
-                <img src="Picture12.png" alt="عسل ومنتجات طبيعية" onerror="this.src='https://placehold.co/600x400/eee/gold?text=Honey'">
+                <img src="Picture7.png" alt="عسل ومنتجات طبيعية" onerror="this.src='honey.jpeg'">
             </div>
             <div class="sector-content">
                 <h2>قطاع المنتجات الطبيعية والعسل</h2>
@@ -557,11 +615,11 @@
         </div>
     </div>
 
-    <!-- 5. قطاع العناية الشخصية والسواك -->
+    <!-- قطاع السواك (Picture8) -->
     <div class="sector-detail">
         <div class="sector-flex">
             <div class="sector-img">
-                <img src="miswak.jpeg" alt="سواك وعناية شخصية" onerror="this.src='https://placehold.co/600x400/eee/gold?text=Miswak'">
+                <img src="Picture8.png" alt="سواك وعناية شخصية" onerror="this.src='miswak.jpeg'">
             </div>
             <div class="sector-content">
                 <h2>قطاع العناية الشخصية والسواك</h2>
@@ -577,11 +635,11 @@
         </div>
     </div>
 
-    <!-- 6. قطاع المحاماة والاستشارات القانونية -->
+    <!-- قطاع المحاماة (Picture9) -->
     <div class="sector-detail">
         <div class="sector-flex">
             <div class="sector-img">
-                <img src="law.jpeg" alt="محاماة واستشارات قانونية" onerror="this.src='https://placehold.co/600x400/eee/gold?text=Law'">
+                <img src="Picture9.png" alt="محاماة واستشارات قانونية" onerror="this.src='law.jpeg'">
             </div>
             <div class="sector-content">
                 <h2>قطاع المحاماة والاستشارات القانونية</h2>
@@ -599,7 +657,7 @@
     </div>
 </section>
 
-<!-- لماذا تختار مجموعة يوسف الرشود -->
+<!-- لماذا تختار مجموعة يوسف الرشود (من Picture3) -->
 <section id="whyus" class="container">
     <div class="why-us">
         <h3>✨ لماذا تختار مجموعة يوسف الرشود؟</h3>
@@ -620,7 +678,7 @@
     </div>
 </section>
 
-<!-- قسم التواصل -->
+<!-- قسم التواصل (Picture10) -->
 <section id="contact" class="container">
     <div class="contact-section">
         <h3 style="color: var(--gold); font-size: 2rem;">تواصل معنا</h3>
@@ -646,44 +704,6 @@
     <p>&copy; 2025 مجموعة يوسف الرشود (YRG) - جميع الحقوق محفوظة. الريادة والتنوع والاستدامة.</p>
 </footer>
 
-<script>
-    // سلايدر الصور مع نقاط تفاعلية وتحكم تلقائي
-    const slides = document.querySelectorAll('.slide');
-    const dotsContainer = document.getElementById('dotsContainer');
-    let currentIndex = 0;
-    let slideInterval;
-
-    // إنشاء النقاط
-    slides.forEach((_, idx) => {
-        const dot = document.createElement('div');
-        dot.classList.add('dot');
-        if (idx === 0) dot.classList.add('active');
-        dot.addEventListener('click', () => goToSlide(idx));
-        dotsContainer.appendChild(dot);
-    });
-
-    const dots = document.querySelectorAll('.dot');
-
-    function goToSlide(index) {
-        slides[currentIndex].classList.remove('active');
-        dots[currentIndex].classList.remove('active');
-        currentIndex = (index + slides.length) % slides.length;
-        slides[currentIndex].classList.add('active');
-        dots[currentIndex].classList.add('active');
-        resetInterval();
-    }
-
-    function nextSlide() {
-        goToSlide(currentIndex + 1);
-    }
-
-    function resetInterval() {
-        clearInterval(slideInterval);
-        slideInterval = setInterval(nextSlide, 5000);
-    }
-
-    // بدء التشغيل التلقائي
-    slideInterval = setInterval(nextSlide, 5000);
-</script>
+<!-- script بسيط للتأكد من تحميل الصور البديلة -->
 </body>
 </html>
