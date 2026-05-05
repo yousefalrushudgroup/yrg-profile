@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>مجموعة يوسف الرشود | YRG - الريادة والتنوع والاستدامة</title>
     <!-- Google Fonts -->
-     <meta name="description" content="مجموعة يوسف الرشود - كيان اقتصادي رائد يقدم خدمات متنوعة في عدة قطاعات.">
-  <meta name="keywords" content="YRG, يوسف الرشود, مجموعة يوسف الرشود, شركة">
-  <meta name="author" content="YRG Group">
-   
+    <meta name="description" content="مجموعة يوسف الرشود - كيان اقتصادي رائد يقدم خدمات متنوعة في عدة قطاعات.">
+    <meta name="keywords" content="YRG, يوسف الرشود, مجموعة يوسف الرشود, شركة">
+    <meta name="author" content="YRG Group">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Font Awesome للأيقونات -->
+    <!-- Font Awesome للأيقونات (أضيفت من الكود الأول) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
@@ -62,6 +61,12 @@
             width: auto;
             border-radius: 8px;
         }
+        .logo-area span {
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+        }
         .nav-links {
             display: flex;
             align-items: center;
@@ -78,6 +83,11 @@
         .nav-links a:hover {
             color: var(--gold);
         }
+        .lang-switch {
+            display: flex;
+            gap: 8px;
+            margin-right: 15px;
+        }
         .lang-btn {
             background: transparent;
             border: 1px solid var(--gold);
@@ -87,18 +97,31 @@
             cursor: pointer;
             font-family: inherit;
             font-weight: 600;
+            transition: 0.2s;
         }
         .lang-btn.active {
             background: var(--gold);
             color: #0f0f14;
         }
+        .lang-btn:hover {
+            background: var(--gold-light);
+            color: #0f0f14;
+        }
 
-        /* السلايدر */
+        /* قسم السلايدر */
         .hero-slider {
             margin-top: 70px;
             position: relative;
             width: 100%;
             background-color: #000;
+        }
+        .slider-container {
+            width: 100%;
+            position: relative;
+        }
+        .slider-images {
+            width: 100%;
+            position: relative;
         }
         .slide {
             display: none;
@@ -122,6 +145,7 @@
             display: flex;
             justify-content: center;
             gap: 12px;
+            z-index: 15;
         }
         .dot {
             width: 12px;
@@ -129,10 +153,57 @@
             background-color: rgba(255,255,255,0.7);
             border-radius: 50%;
             cursor: pointer;
+            transition: 0.3s;
         }
-        .dot.active { background-color: var(--gold); }
+        .dot.active {
+            background-color: var(--gold);
+            transform: scale(1.2);
+        }
 
-        /* قسم المدير التنفيذي الجديد */
+        /* النص أسفل السلايدر */
+        .hero-text-under {
+            text-align: center;
+            padding: 2rem 1rem 1.5rem;
+            background: linear-gradient(to bottom, #faf5ea, #fffcf7);
+        }
+        .hero-text-under h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #1e1e2a;
+            margin-bottom: 0.5rem;
+        }
+        .hero-text-under h1 span {
+            color: var(--gold);
+        }
+        .hero-text-under p {
+            font-size: 1.3rem;
+            color: #4a4a5a;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .pdf-btn {
+            display: inline-block;
+            background: var(--gold);
+            color: #0f0f14;
+            font-weight: bold;
+            padding: 0.8rem 2rem;
+            border-radius: 3rem;
+            text-decoration: none;
+            margin-top: 1.5rem;
+            font-size: 1rem;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            font-family: inherit;
+        }
+        .pdf-btn:hover {
+            background: white;
+            color: #c49a2b;
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* ========== قسم المدير التنفيذي (المنقول من الكود الأول) ========== */
         .ceo-section {
             padding: 4rem 5%;
             background-color: #fff;
@@ -175,48 +246,259 @@
         }
         .x-link { background: #000; color: #fff; }
         .mail-link { background: var(--gold); color: #fff; }
+        /* ================================================================ */
 
-        /* النص أسفل السلايدر */
-        .hero-text-under {
-            text-align: center;
-            padding: 2rem 1rem 1.5rem;
-            background: linear-gradient(to bottom, #faf5ea, #fffcf7);
+        /* باقي الأقسام */
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 3rem 5%;
         }
-        .hero-text-under h1 { font-size: 2.8rem; font-weight: 800; color: #1e1e2a; }
-        .hero-text-under h1 span { color: var(--gold); }
-        .pdf-btn {
-            display: inline-block;
-            background: var(--gold);
-            color: #0f0f14;
-            font-weight: bold;
-            padding: 0.8rem 2rem;
-            border-radius: 3rem;
-            text-decoration: none;
-            margin-top: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* باقي التنسيقات العامة من ملفك */
-        .container { max-width: 1300px; margin: 0 auto; padding: 3rem 5%; }
         .section-title {
             font-size: 2.2rem;
             font-weight: 800;
+            color: #1e1e2a;
             border-right: 6px solid var(--gold);
             padding-right: 20px;
             margin-bottom: 2rem;
         }
-        .intro-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .intro-card { background: white; border-radius: var(--border-radius); padding: 1.8rem; box-shadow: var(--card-shadow); border-top: 4px solid var(--gold); }
-        .sector-detail { background: #fffef9; border-radius: 2rem; margin-bottom: 3rem; overflow: hidden; box-shadow: var(--card-shadow); border: 1px solid #f0e5d2; }
-        .sector-flex { display: flex; flex-wrap: wrap; align-items: center; }
-        .sector-img img { width: 100%; height: 280px; object-fit: cover; }
-        .sector-content { flex: 2; padding: 2rem; }
-        .contact-section { background: #0f0f14; color: #e5e5e5; border-radius: 2rem; padding: 2.5rem; text-align: center; margin-top: 3rem; }
-        footer { text-align: center; padding: 2rem; background: #07070a; color: #aaa; }
+        .section-title span {
+            color: var(--gold);
+        }
+
+        .intro-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .intro-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 1.8rem;
+            box-shadow: var(--card-shadow);
+            border-top: 4px solid var(--gold);
+            transition: 0.25s ease;
+        }
+        .intro-card h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: #2c2c2c;
+        }
+        .intro-card .sub {
+            font-weight: 600;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+        .intro-card p, .intro-card li {
+            color: #3a3a44;
+            line-height: 1.7;
+        }
+        .intro-card ul {
+            padding-right: 1.2rem;
+            margin-top: 0.8rem;
+        }
+
+        .sector-detail {
+            background: #fffef9;
+            border-radius: 2rem;
+            margin-bottom: 3rem;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            border: 1px solid #f0e5d2;
+        }
+        .sector-detail:nth-child(even) .sector-flex {
+            flex-direction: row-reverse;
+        }
+        .sector-flex {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .sector-img {
+            flex: 1.2;
+            min-width: 280px;
+            overflow: hidden;
+        }
+        .sector-img img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+        .sector-img img:hover {
+            transform: scale(1.02);
+        }
+        .sector-content {
+            flex: 2;
+            padding: 2rem 2rem 2rem 2rem;
+        }
+        .sector-content h2 {
+            font-size: 1.9rem;
+            font-weight: 800;
+            color: #1f2a3a;
+            margin-bottom: 1rem;
+            border-right: 5px solid var(--gold);
+            padding-right: 1rem;
+        }
+        .sector-content h2 small {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--gold);
+        }
+        .sector-content .tagline {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--gold);
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.3px;
+        }
+        .sector-content p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: #2d2d38;
+        }
+        .sector-content ul {
+            padding-right: 1.5rem;
+            margin: 1rem 0;
+        }
+        .sector-content li {
+            margin-bottom: 0.6rem;
+        }
+
+        .why-us {
+            background: linear-gradient(120deg, #fbf7ef, #fff7e8);
+            border-radius: 2rem;
+            padding: 2.5rem;
+            margin-top: 2rem;
+            border: 1px solid #ecd9b4;
+        }
+        .why-us h3 {
+            font-size: 1.9rem;
+            font-weight: 800;
+            color: #c49a2b;
+            margin-bottom: 1rem;
+        }
+        .why-us-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .why-item {
+            background: white;
+            border-radius: 1.2rem;
+            padding: 1.2rem;
+            text-align: center;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.03);
+            border-bottom: 3px solid var(--gold);
+        }
+        .why-item h4 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #222;
+        }
+        .why-item p {
+            margin-top: 0.5rem;
+            color: #4a4a5a;
+        }
+
+        .contact-section {
+            background: #0f0f14;
+            color: #e5e5e5;
+            border-radius: 2rem;
+            margin: 3rem 0 1rem;
+            padding: 2.5rem;
+            text-align: center;
+        }
+        .contact-info-flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .contact-card {
+            background: rgba(255,255,245,0.05);
+            padding: 1rem 2rem;
+            border-radius: 3rem;
+            backdrop-filter: blur(4px);
+            border: 1px solid var(--gold);
+        }
+        .contact-card p {
+            font-size: 1.1rem;
+        }
+        .contact-card a {
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .btn-store {
+            display: inline-block;
+            background: var(--gold);
+            color: #0f0f14;
+            font-weight: bold;
+            padding: 0.9rem 2.5rem;
+            border-radius: 3rem;
+            text-decoration: none;
+            margin-top: 2rem;
+            font-size: 1.1rem;
+            transition: 0.3s;
+        }
+        .btn-store:hover {
+            background: white;
+            color: #c49a2b;
+            transform: scale(1.02);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: #07070a;
+            color: #aaa;
+            border-top: 1px solid #2a2a2a;
+        }
 
         @media (max-width: 800px) {
-            .navbar { flex-direction: column; padding: 0.6rem; }
-            .hero-text-under h1 { font-size: 2rem; }
+            .navbar {
+                flex-direction: column;
+                padding: 0.6rem;
+            }
+            .nav-links {
+                justify-content: center;
+            }
+            .lang-switch {
+                margin-right: 0;
+            }
+            .hero-text-under h1 {
+                font-size: 2rem;
+            }
+            .hero-text-under p {
+                font-size: 1rem;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .sector-content {
+                padding: 1.5rem;
+            }
+            .sector-content h2 {
+                font-size: 1.5rem;
+            }
+            .sector-img img {
+                height: 220px;
+            }
+            .ceo-image {
+                width: 200px;
+                height: 200px;
+            }
+            .ceo-social-links {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
@@ -231,6 +513,7 @@
         <a href="#intro" data-key="nav_about">عن المجموعة</a>
         <a href="#sectors" data-key="nav_sectors">قطاعاتنا</a>
         <a href="#ceo" data-key="nav_ceo">المدير التنفيذي</a>
+        <a href="#whyus" data-key="nav_why">لماذا نختار</a>
         <a href="#contact" data-key="nav_contact">تواصل</a>
         <div class="lang-switch">
             <button class="lang-btn active" id="lang-ar" data-lang="ar">عربي</button>
@@ -239,26 +522,35 @@
     </div>
 </header>
 
+<!-- السلايدر -->
 <section class="hero-slider">
     <div class="slider-container">
         <div class="slider-images" id="sliderImages">
-            <div class="slide active"><img src="Picture1.png" alt="YRG 1"></div>
-            <div class="slide"><img src="baner3.jpg" alt="YRG 2" onerror="this.src='Picture1.png'"></div>
+            <div class="slide active">
+                <img src="Picture1.png" alt="مجموعة يوسف الرشود 1">
+            </div>
+            <div class="slide">
+                <img src="baner3.jpg" alt="مجموعة يوسف الرشود 2" onerror="this.src='Picture1.png'">
+            </div>
+            <div class="slide">
+                <img src="baner4.jpg" alt="مجموعة يوسف الرشود 3" onerror="this.src='Picture1.png'">
+            </div>
         </div>
         <div class="dots" id="dotsContainer"></div>
     </div>
 </section>
 
+<!-- النص أسفل السلايدر -->
 <div class="hero-text-under">
     <h1>مجموعة يوسف الرشود <span>(YRG)</span></h1>
     <p data-key="hero_tagline">ريادة • تنوع • استدامة | منذ 2024</p>
     <button class="pdf-btn" id="downloadPDFBtn" data-key="pdf_button">📄 تحميل الملف التعريفي للمجموعة (PDF)</button>
 </div>
 
-<!-- قسم المدير التنفيذي الجديد (تم دمجه مع نظام الترجمة) -->
+<!-- ========== قسم المدير التنفيذي (تم إضافته من الكود الأول) ========== -->
 <section id="ceo" class="ceo-section">
     <div class="ceo-card">
-        <img src="ceo-photo.jpg" alt="يوسف الرشود" class="ceo-image" onerror="this.src='https://via.placeholder.com/180/C9A03D/FFFFFF?text=YRG'">
+        <img src="ceo-photo.jpg" alt="يوسف الرشود" class="ceo-image" onerror="this.src='https://via.placeholder.com/280/C9A03D/FFFFFF?text=YRG'">
         <h2 data-key="ceo_role">المدير التنفيذي لمجموعة يوسف الرشود</h2>
         <h3 style="color: var(--gold); margin-bottom: 20px;" data-key="ceo_name">أ.م/ يوسف بن محمد بن سعد الرشود</h3>
         
@@ -279,18 +571,199 @@
         </p>
     </div>
 </section>
+<!-- ================================================================ -->
 
 <!-- قسم المقدمة -->
 <section id="intro" class="container">
     <div class="section-title"><span data-key="intro_title_span">مقدمة</span> <span data-key="intro_title">المجموعة</span></div>
     <div class="intro-cards">
         <div class="intro-card">
-            <h3>🏗️ <span data-key="card1_title">قطاع المقاولات والعقار</span></h3>
-            <p data-key="card1_p">الذراع التنفيذي للمجموعة لبناء المستقبل.</p>
+            <h3>🏗️ <span data-key="card1_title">قطاع المقاولات والعقار</span><br><span style="font-size:1.2rem;">YRG Construction</span></h3>
+            <div class="sub" data-key="card1_sub">"نبني المستقبل بدقة هندسية"</div>
+            <p data-key="card1_p">الذراع التنفيذي للمجموعة، يتميز بـ:</p>
+            <ul>
+                <li data-key="card1_li1">تنفيذ مشاريع المقاولات العامة والإنشاءات بأعلى معايير السلامة والجودة.</li>
+                <li data-key="card1_li2">التطوير العقاري وبناء المجمعات الحديثة.</li>
+                <li data-key="card1_li3">إدارة الأملاك وفق أحدث المعايير لتعظيم القيمة الاستثمارية.</li>
+                <li data-key="card1_li4">الالتزام بالجدول الزمني والمواصفات الفنية المعتمدة.</li>
+            </ul>
         </div>
         <div class="intro-card">
-            <h3><i class="fas fa-leaf"></i> <span data-key="card2_title">قطاع العود والعطور</span></h3>
-            <p data-key="card2_p">فخامة الطيب الأصيل وتجسيد الهوية الفاخرة.</p>
+            <h3>
+                <img src="oud-icon.png" style="width:25px; vertical-align:middle;"> 
+                <span data-key="card2_title">قطاع العود والعطور</span>
+                <br>
+                <span style="font-size:1.2rem;">يوسف الرشود</span>
+            </h3>
+            <div class="sub" data-key="card2_sub">"فخامة الطيب الأصيل"</div>
+            <p data-key="card2_p">القلب النابض للمجموعة وتجسيد الهوية الفاخرة:</p>
+            <ul>
+                <li data-key="card2_li1">انتقاء أجود أنواع العود الطبيعي والبخور من مصادرها الأصلية.</li>
+                <li data-key="card2_li2">خطوط إنتاج حصرية تمزج الأصالة الشرقية بالحداثة العالمية.</li>
+                <li data-key="card2_li3">منتجات تعبر عن الرقي والتميز وتناسب المناسبات الفاخرة.</li>
+            </ul>
+        </div>
+        <div class="intro-card">
+            <h3 style="color: #333; border-right: 5px solid #d4af37; padding-right: 10px;">
+                <span style="filter: drop-shadow(2px 2px 2px #ccc);">🧥</span> 
+                <span data-key="card3_title">قطاع الموضة والملابس</span>
+                <br>
+                <span style="font-size:1.1rem; color: #d4af37; font-weight: bold;">YRG Fashion</span>
+            </h3>
+            <div class="sub" data-key="card3_sub">"عنوان الأناقة والرقي"</div>
+            <p data-key="card3_p">بصمتنا في عالم الأزياء العصرية:</p>
+            <ul>
+                <li data-key="card3_li1">تصاميم مبتكرة تتماشى مع الذوق الرفيع وتواكب الصيحات.</li>
+                <li data-key="card3_li2">أعلى معايير الجودة في اختيار الأقمشة والخامات.</li>
+                <li data-key="card3_li3">براند رائد في الملابس الجاهزة "YRG".</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- القطاعات التفصيلية -->
+<section id="sectors" class="container">
+    <div class="section-title"> <span data-key="sectors_title_span">قطاعاتنا</span></div>
+
+    <!-- 1. قطاع المقاولات والعقار -->
+    <div class="sector-detail">
+        <div class="sector-flex">
+            <div class="sector-img">
+                <img src="construction.jpg" alt="مقاولات وعقار" onerror="this.src='https://placehold.co/600x400/eee/gold?text=Construction'">
+            </div>
+            <div class="sector-content">
+                <h2><span data-key="sec1_title">قطاع المقاولات والعقار</span> <small>YRG Construction</small></h2>
+                <div class="tagline" data-key="sec1_tagline">الذراع التنفيذي والاستثماري</div>
+                <p data-key="sec1_p1">يمثل قطاع المقاولات والعقار الذراع التنفيذي والاستثماري لمجموعة يوسف الرشود، حيث نتخصص في تحويل الرؤى الهندسية إلى واقع ملموس يتسم بالمتانة والفخامة. نجمع بين الخبرة الإنشائية العميقة وأحدث تقنيات إدارة الأملاك لتقديم حلول عقارية متكاملة.</p>
+                <ul>
+                    <li data-key="sec1_li1"><strong>المقاولات العامة والإنشاءات:</strong> تنفيذ المشاريع بمختلف أحجامها مع الالتزام بأعلى معايير الجودة والسلامة.</li>
+                    <li data-key="sec1_li2"><strong>التطوير العقاري:</strong> بناء مجمعات سكنية وتجارية حديثة تواكب رؤية المستقبل.</li>
+                    <li data-key="sec1_li3"><strong>إدارة الأملاك:</strong> خدمات إدارة وصيانة لتعظيم القيمة الاستثمارية.</li>
+                    <li data-key="sec1_li4"><strong>الاستشارات الهندسية:</strong> الإشراف وضمان تنفيذ المشاريع وفق المخططات والجداول الزمنية.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. قطاع العود والبخور والعطور -->
+    <div class="sector-detail">
+        <div class="sector-flex">
+            <div class="sector-img">
+                <img src="oud.jpeg" alt="عود وعطور" onerror="this.src='https://placehold.co/600x400/eee/gold?text=Oud'">
+            </div>
+            <div class="sector-content">
+                <h2><span data-key="sec2_title">قطاع العود والبخور والعطور</span></h2>
+                <div class="tagline" data-key="sec2_tagline">"الطيب الأصيل برؤية عصرية"</div>
+                <p data-key="sec2_p1">يُعد قطاع العود والبخور القلب النابض للمجموعة، حيث نقدم تجربة حسية فريدة تعيد صياغة علاقة الإنسان بالعود، من خلال انتقاء أرقى المكونات الطبيعية التي تعكس التراث الخليجي العريق بلمسة فخامة عالمية.</p>
+                <ul>
+                    <li data-key="sec2_li1"><strong>انتقاء الأجود:</strong> أعواد البخور الطبيعية من مصادر أصلية باختبارات دقيقة للرائحة والنقاء.</li>
+                    <li data-key="sec2_li2"><strong>تصميم الروائح الحصرية:</strong> مزج دهن العود الفاخر بالزيوت العطرية النادرة.</li>
+                    <li data-key="sec2_li3"><strong>الهوية البصرية (التاج):</strong> شعار التاج الأبيض على الخلفية الكحلية يرمز للرقي والجودة الملكية.</li>
+                    <li data-key="sec2_li4"><strong>الابتكار في التقديم:</strong> أغلفة وتصاميم فاخرة تجعل منتجاتنا هدايا استثنائية.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. قطاع الموضة والملابس -->
+    <div class="sector-detail">
+        <div class="sector-flex">
+            <div class="sector-img">
+                <img src="fashion.jpeg" alt="YRG Fashion" onerror="this.src='https://placehold.co/600x400/eee/gold?text=Fashion'">
+            </div>
+            <div class="sector-content">
+                <h2><span data-key="sec3_title">قطاع الموضة والملابس</span> <small>YRG FASHION</small></h2>
+                <div class="tagline" data-key="sec3_tagline">بصمة الأناقة والرقي العصري</div>
+                <p data-key="sec3_p1">نمثل قطاع الأناقة في المجموعة، حيث نسعى لتقديم مفهوم جديد للموضة يجمع بين الرقي العصري واللمسات الفريدة. نؤمن بأن المظهر لغة تعبر عن الشخصية، فنحرص على تصميم قطع تجسد الفخامة في كل التفاصيل.</p>
+                <ul>
+                    <li data-key="sec3_li1"><strong>التصميم والابتكار:</strong> تصاميم عصرية تحمل هوية YRG بأعلى معايير الجودة.</li>
+                    <li data-key="sec3_li2"><strong>تلبية الأذواق الرفيعة:</strong> استهداف النخبة الباحثين عن التميز والقطع الحصرية.</li>
+                    <li data-key="sec3_li3"><strong>الجودة والاستدامة:</strong> مراحل إنتاج دقيقة لمنتجات تدوم طويلاً وتحافظ على رونقها.</li>
+                    <li data-key="sec3_li4"><strong>تجربة تسوق فريدة:</strong> علاقة مستدامة مع العملاء وخدمات متميزة.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. قطاع المنتجات الطبيعية والعسل -->
+    <div class="sector-detail">
+        <div class="sector-flex">
+            <div class="sector-img">
+                <img src="Picture12.png" alt="عسل ومنتجات طبيعية" onerror="this.src='https://placehold.co/600x400/eee/gold?text=Honey'">
+            </div>
+            <div class="sector-content">
+                <h2><span data-key="sec4_title">قطاع المنتجات الطبيعية والعسل</span></h2>
+                <div class="tagline" data-key="sec4_tagline">"غذاء نقي، وصحة مستدامة"</div>
+                <p data-key="sec4_p1">يمثل هذا القطاع التزامنا الراسخ بتقديم جودة الأجداد ومعايير العصر. ننتقي أجود أنواع العسل الطبيعي والمنتجات المستخلصة من خيرات الأرض، لضمان غذاء صحي ونقي يحافظ على القيمة الغذائية والعلاجية الكاملة.</p>
+                <ul>
+                    <li data-key="sec4_li1"><strong>الانتقاء الفائق:</strong> عسل من أفضل المناطق التي تتبع ممارسات تربية نحل مستدامة وطبيعية 100%.</li>
+                    <li data-key="sec4_li2"><strong>هوية بصرية أصيلة:</strong> شعار يجمع رمزية "ملعقة العسل" التقليدية والخط العربي الأنيق.</li>
+                    <li data-key="sec4_li3"><strong>تنوع المنتجات:</strong> تشكيلة واسعة من العسل الفاخر والمنتجات الطبيعية للعناية بالصحة.</li>
+                    <li data-key="sec4_li4"><strong>الثقة والمصداقية:</strong> تعبئة وتغليف دقيق دون أي إضافات.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. قطاع العناية الشخصية والسواك -->
+    <div class="sector-detail">
+        <div class="sector-flex">
+            <div class="sector-img">
+                <img src="miswak.jpeg" alt="سواك وعناية شخصية" onerror="this.src='https://placehold.co/600x400/eee/gold?text=Miswak'">
+            </div>
+            <div class="sector-content">
+                <h2><span data-key="sec5_title">قطاع العناية الشخصية والسواك</span></h2>
+                <div class="tagline" data-key="sec5_tagline">"من الطبيعة.. هدية للغالين"</div>
+                <p data-key="sec5_p1">أحد الأركان الجوهرية، نهدف إلى إعادة إحياء الموروث الطبيعي بلمسة عصرية. نقدم السواك الفاخر الذي يتم اختياره بعناية لضمان أعلى مستويات الجودة والنقاء.</p>
+                <ul>
+                    <li data-key="sec5_li1"><strong>أصالة المصدر:</strong> مساويك يوسف الرشود من أجود المزارع الطبيعية لفوائد صحية وطبية.</li>
+                    <li data-key="sec5_li2"><strong>معايير الجودة:</strong> رقابة صارمة وتغليف مثالي يحافظ على الرطوبة والنظافة.</li>
+                    <li data-key="sec5_li3"><strong>سهولة الوصول:</strong> منصات إلكترونية ومتجر yrg.store لخدمة العملاء في كل المناطق.</li>
+                    <li data-key="sec5_li4"><strong>تعدد الخيارات:</strong> أحجام وأنواع مختلفة تناسب الاحتياجات اليومية أو كهدايا قيمة.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. قطاع المحاماة والاستشارات القانونية -->
+    <div class="sector-detail">
+        <div class="sector-flex">
+            <div class="sector-img">
+                <img src="law.jpeg" alt="محاماة واستشارات قانونية" onerror="this.src='https://placehold.co/600x400/eee/gold?text=Law'">
+            </div>
+            <div class="sector-content">
+                <h2><span data-key="sec6_title">قطاع المحاماة والاستشارات القانونية</span></h2>
+                <div class="tagline" data-key="sec6_tagline">الركيزة الحمائية للمجموعة</div>
+                <p data-key="sec6_p1">نؤمن بأن العدالة أساس التنمية، نقدم حلولاً قانونية متكاملة ومبتكرة بأعلى معايير المهنية والسرية، مع صيانة الحقوق وتحقيق الأمان القانوني للأفراد والشركات.</p>
+                <ul>
+                    <li data-key="sec6_li1"><strong>التمثيل القضائي والترافع:</strong> الدفاع عن الحقوق أمام كافة المحاكم والجهات القضائية.</li>
+                    <li data-key="sec6_li2"><strong>الاستشارات القانونية:</strong> مشورة استباقية في المجالات التجارية والمدنية والعمالية.</li>
+                    <li data-key="sec6_li3"><strong>صياغة ومراجعة العقود:</strong> إعداد الاتفاقيات الدولية والمحلية لحماية الاستثمارات.</li>
+                    <li data-key="sec6_li4"><strong>تأسيس الشركات وحوكمتها:</strong> دعم رواد الأعمال وفق الأنظمة الحديثة.</li>
+                    <li data-key="sec6_li5"><strong>التركات والنزاعات العائلية:</strong> معالجة قضايا المواريث وفق الشريعة والأنظمة المحلية.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- لماذا تختار مجموعة يوسف الرشود -->
+<section id="whyus" class="container">
+    <div class="why-us">
+        <h3 data-key="why_title">✨ لماذا تختار مجموعة يوسف الرشود؟</h3>
+        <div class="why-us-grid">
+            <div class="why-item">
+                <h4 data-key="why_item1_title">تنوع المحفظة الاستثمارية</h4>
+                <p data-key="why_item1_text">يقلل المخاطر ويرفع فرص النمو المستدام</p>
+            </div>
+            <div class="why-item">
+                <h4 data-key="why_item2_title">هوية بصرية احترافية</h4>
+                <p data-key="why_item2_text">تعكس قوة العلامة التجارية في كافة القطاعات</p>
+            </div>
+            <div class="why-item">
+                <h4 data-key="why_item3_title">الالتزام بالجودة المطلقة</h4>
+                <p data-key="why_item3_text">بدءاً من المواد الخام وصولاً إلى المنتج النهائي أو الخدمة المقدمة</p>
+            </div>
         </div>
     </div>
 </section>
@@ -300,23 +773,35 @@
     <div class="contact-section">
         <h3 style="color: var(--gold); font-size: 2rem;" data-key="contact_title">تواصل معنا</h3>
         <div class="contact-info-flex">
-            <div class="contact-card"><p>📍 <span data-key="contact_address">الرياض / النرجس</span></p></div>
-            <div class="contact-card"><p>📧 Yousefalrushud.yrg@gmail.com</p></div>
+            <div class="contact-card">
+                <p>📍 <span data-key="contact_address">المقر الرئيسي: الرياض / النرجس</span></p>
+            </div>
+            <div class="contact-card">
+                <p>📧 <a href="mailto:Yousefalrushud.yrg@gmail.com">Yousefalrushud.yrg@gmail.com</a></p>
+            </div>
+            <div class="contact-card">
+                <p>📞 <a href="tel:0554917707">966554917707</a></p>
+            </div>
+            <div class="contact-card">
+                <p>🌐 <a href="https://yousefalrushudgroup.github.io/yrg-profile/" target="_blank">yousefalrushudgroup.github.io</a></p>
+            </div>
         </div>
         <a href="https://yrgstore.com" class="btn-store" target="_blank" data-key="store_btn">🛍️ زيارة المتجر الإلكتروني</a>
     </div>
 </section>
 
 <footer>
-    <p data-key="footer">&copy; 2025 مجموعة يوسف الرشود (YRG) - جميع الحقوق محفوظة.</p>
+    <p data-key="footer">&copy; 2025 مجموعة يوسف الرشود (YRG) - جميع الحقوق محفوظة. الريادة والتنوع والاستدامة.</p>
 </footer>
 
 <script>
-    // سلايدر الصور
+    // سلايدر الصور مع نقاط تفاعلية وتحكم تلقائي
     const slides = document.querySelectorAll('.slide');
     const dotsContainer = document.getElementById('dotsContainer');
     let currentIndex = 0;
+    let slideInterval;
 
+    // إنشاء النقاط
     slides.forEach((_, idx) => {
         const dot = document.createElement('div');
         dot.classList.add('dot');
@@ -325,61 +810,261 @@
         dotsContainer.appendChild(dot);
     });
 
+    const dots = document.querySelectorAll('.dot');
+
     function goToSlide(index) {
         slides[currentIndex].classList.remove('active');
-        document.querySelectorAll('.dot')[currentIndex].classList.remove('active');
-        currentIndex = index;
+        dots[currentIndex].classList.remove('active');
+        currentIndex = (index + slides.length) % slides.length;
         slides[currentIndex].classList.add('active');
-        document.querySelectorAll('.dot')[currentIndex].classList.add('active');
+        dots[currentIndex].classList.add('active');
+        resetInterval();
     }
 
-    setInterval(() => goToSlide((currentIndex + 1) % slides.length), 5000);
+    function nextSlide() {
+        goToSlide(currentIndex + 1);
+    }
 
-    // الترجمة (تمت إضافة مفاتيح المدير التنفيذي)
+    function resetInterval() {
+        clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, 5000);
+    }
+
+    slideInterval = setInterval(nextSlide, 5000);
+
+    // ----- متغيرات الترجمة ----- (تم إضافة مفاتيح المدير التنفيذي)
     const translations = {
         ar: {
-            nav_about: "عن المجموعة", nav_sectors: "قطاعاتنا", nav_ceo: "المدير التنفيذي", nav_contact: "تواصل",
-            hero_tagline: "ريادة • تنوع • استدامة | منذ 2024", pdf_button: "📄 تحميل الملف التعريفي (PDF)",
-            ceo_role: "المدير التنفيذي لمجموعة يوسف الرشود", ceo_name: "أ.م/ يوسف بن محمد بن سعد الرشود",
-            link_yrg: "مجموعة يوسف الرشود", link_personal: "الصفحة الشخصية", link_email_btn: "التواصل عبر الإيميل",
-            ceo_contact_text: "للتواصل مع المدير التنفيذي عبر الإيميل:",
-            intro_title_span: "مقدمة", intro_title: "المجموعة",
-            card1_title: "قطاع المقاولات والعقار", card1_p: "الذراع التنفيذي للمجموعة لبناء المستقبل.",
-            contact_title: "تواصل معنا", contact_address: "الرياض / النرجس", store_btn: "🛍️ المتجر الإلكتروني",
-            footer: "© 2025 مجموعة يوسف الرشود (YRG) - جميع الحقوق محفوظة."
+            nav_about: "عن المجموعة",
+            nav_sectors: "قطاعاتنا",
+            nav_ceo: "المدير التنفيذي",
+            nav_why: "لماذا نختار",
+            nav_contact: "تواصل",
+            hero_tagline: "ريادة • تنوع • استدامة | منذ 2024",
+            pdf_button: "📄 تحميل الملف التعريفي للمجموعة (PDF)",
+            intro_title_span: "مقدمة",
+            intro_title: "المجموعة",
+            card1_title: "قطاع المقاولات والعقار",
+            card1_sub: '"نبني المستقبل بدقة هندسية"',
+            card1_p: "الذراع التنفيذي للمجموعة، يتميز بـ:",
+            card1_li1: "تنفيذ مشاريع المقاولات العامة والإنشاءات بأعلى معايير السلامة والجودة.",
+            card1_li2: "التطوير العقاري وبناء المجمعات الحديثة.",
+            card1_li3: "إدارة الأملاك وفق أحدث المعايير لتعظيم القيمة الاستثمارية.",
+            card1_li4: "الالتزام بالجدول الزمني والمواصفات الفنية المعتمدة.",
+            card2_title: "قطاع العود والعطور",
+            card2_sub: '"فخامة الطيب الأصيل"',
+            card2_p: "القلب النابض للمجموعة وتجسيد الهوية الفاخرة:",
+            card2_li1: "انتقاء أجود أنواع العود الطبيعي والبخور من مصادرها الأصلية.",
+            card2_li2: "خطوط إنتاج حصرية تمزج الأصالة الشرقية بالحداثة العالمية.",
+            card2_li3: "منتجات تعبر عن الرقي والتميز وتناسب المناسبات الفاخرة.",
+            card3_title: "قطاع الموضة والملابس",
+            card3_sub: '"عنوان الأناقة والرقي"',
+            card3_p: "بصمتنا في عالم الأزياء العصرية:",
+            card3_li1: "تصاميم مبتكرة تتماشى مع الذوق الرفيع وتواكب الصيحات.",
+            card3_li2: "أعلى معايير الجودة في اختيار الأقمشة والخامات.",
+            card3_li3: 'براند رائد في الملابس الجاهزة "YRG".',
+            sectors_title_span: "قطاعاتنا",
+            sec1_title: "قطاع المقاولات والعقار",
+            sec1_tagline: "الذراع التنفيذي والاستثماري",
+            sec1_p1: "يمثل قطاع المقاولات والعقار الذراع التنفيذي والاستثماري لمجموعة يوسف الرشود، حيث نتخصص في تحويل الرؤى الهندسية إلى واقع ملموس يتسم بالمتانة والفخامة. نجمع بين الخبرة الإنشائية العميقة وأحدث تقنيات إدارة الأملاك لتقديم حلول عقارية متكاملة.",
+            sec1_li1: "<strong>المقاولات العامة والإنشاءات:</strong> تنفيذ المشاريع بمختلف أحجامها مع الالتزام بأعلى معايير الجودة والسلامة.",
+            sec1_li2: "<strong>التطوير العقاري:</strong> بناء مجمعات سكنية وتجارية حديثة تواكب رؤية المستقبل.",
+            sec1_li3: "<strong>إدارة الأملاك:</strong> خدمات إدارة وصيانة لتعظيم القيمة الاستثمارية.",
+            sec1_li4: "<strong>الاستشارات الهندسية:</strong> الإشراف وضمان تنفيذ المشاريع وفق المخططات والجداول الزمنية.",
+            sec2_title: "قطاع العود والبخور والعطور",
+            sec2_tagline: '"الطيب الأصيل برؤية عصرية"',
+            sec2_p1: "يُعد قطاع العود والبخور القلب النابض للمجموعة، حيث نقدم تجربة حسية فريدة تعيد صياغة علاقة الإنسان بالعود، من خلال انتقاء أرقى المكونات الطبيعية التي تعكس التراث الخليجي العريق بلمسة فخامة عالمية.",
+            sec2_li1: "<strong>انتقاء الأجود:</strong> أعواد البخور الطبيعية من مصادر أصلية باختبارات دقيقة للرائحة والنقاء.",
+            sec2_li2: "<strong>تصميم الروائح الحصرية:</strong> مزج دهن العود الفاخر بالزيوت العطرية النادرة.",
+            sec2_li3: "<strong>الهوية البصرية (التاج):</strong> شعار التاج الأبيض على الخلفية الكحلية يرمز للرقي والجودة الملكية.",
+            sec2_li4: "<strong>الابتكار في التقديم:</strong> أغلفة وتصاميم فاخرة تجعل منتجاتنا هدايا استثنائية.",
+            sec3_title: "قطاع الموضة والملابس",
+            sec3_tagline: "بصمة الأناقة والرقي العصري",
+            sec3_p1: "نمثل قطاع الأناقة في المجموعة، حيث نسعى لتقديم مفهوم جديد للموضة يجمع بين الرقي العصري واللمسات الفريدة. نؤمن بأن المظهر لغة تعبر عن الشخصية، فنحرص على تصميم قطع تجسد الفخامة في كل التفاصيل.",
+            sec3_li1: "<strong>التصميم والابتكار:</strong> تصاميم عصرية تحمل هوية YRG بأعلى معايير الجودة.",
+            sec3_li2: "<strong>تلبية الأذواق الرفيعة:</strong> استهداف النخبة الباحثين عن التميز والقطع الحصرية.",
+            sec3_li3: "<strong>الجودة والاستدامة:</strong> مراحل إنتاج دقيقة لمنتجات تدوم طويلاً وتحافظ على رونقها.",
+            sec3_li4: "<strong>تجربة تسوق فريدة:</strong> علاقة مستدامة مع العملاء وخدمات متميزة.",
+            sec4_title: "قطاع المنتجات الطبيعية والعسل",
+            sec4_tagline: '"غذاء نقي، وصحة مستدامة"',
+            sec4_p1: "يمثل هذا القطاع التزامنا الراسخ بتقديم جودة الأجداد ومعايير العصر. ننتقي أجود أنواع العسل الطبيعي والمنتجات المستخلصة من خيرات الأرض، لضمان غذاء صحي ونقي يحافظ على القيمة الغذائية والعلاجية الكاملة.",
+            sec4_li1: "<strong>الانتقاء الفائق:</strong> عسل من أفضل المناطق التي تتبع ممارسات تربية نحل مستدامة وطبيعية 100%.",
+            sec4_li2: "<strong>هوية بصرية أصيلة:</strong> شعار يجمع رمزية 'ملعقة العسل' التقليدية والخط العربي الأنيق.",
+            sec4_li3: "<strong>تنوع المنتجات:</strong> تشكيلة واسعة من العسل الفاخر والمنتجات الطبيعية للعناية بالصحة.",
+            sec4_li4: "<strong>الثقة والمصداقية:</strong> تعبئة وتغليف دقيق دون أي إضافات.",
+            sec5_title: "قطاع العناية الشخصية والسواك",
+            sec5_tagline: '"من الطبيعة.. هدية للغالين"',
+            sec5_p1: "أحد الأركان الجوهرية، نهدف إلى إعادة إحياء الموروث الطبيعي بلمسة عصرية. نقدم السواك الفاخر الذي يتم اختياره بعناية لضمان أعلى مستويات الجودة والنقاء.",
+            sec5_li1: "<strong>أصالة المصدر:</strong> مساويك يوسف الرشود من أجود المزارع الطبيعية لفوائد صحية وطبية.",
+            sec5_li2: "<strong>معايير الجودة:</strong> رقابة صارمة وتغليف مثالي يحافظ على الرطوبة والنظافة.",
+            sec5_li3: "<strong>سهولة الوصول:</strong> منصات إلكترونية ومتجر yrg.store لخدمة العملاء في كل المناطق.",
+            sec5_li4: "<strong>تعدد الخيارات:</strong> أحجام وأنواع مختلفة تناسب الاحتياجات اليومية أو كهدايا قيمة.",
+            sec6_title: "قطاع المحاماة والاستشارات القانونية",
+            sec6_tagline: "الركيزة الحمائية للمجموعة",
+            sec6_p1: "نؤمن بأن العدالة أساس التنمية، نقدم حلولاً قانونية متكاملة ومبتكرة بأعلى معايير المهنية والسرية، مع صيانة الحقوق وتحقيق الأمان القانوني للأفراد والشركات.",
+            sec6_li1: "<strong>التمثيل القضائي والترافع:</strong> الدفاع عن الحقوق أمام كافة المحاكم والجهات القضائية.",
+            sec6_li2: "<strong>الاستشارات القانونية:</strong> مشورة استباقية في المجالات التجارية والمدنية والعمالية.",
+            sec6_li3: "<strong>صياغة ومراجعة العقود:</strong> إعداد الاتفاقيات الدولية والمحلية لحماية الاستثمارات.",
+            sec6_li4: "<strong>تأسيس الشركات وحوكمتها:</strong> دعم رواد الأعمال وفق الأنظمة الحديثة.",
+            sec6_li5: "<strong>التركات والنزاعات العائلية:</strong> معالجة قضايا المواريث وفق الشريعة والأنظمة المحلية.",
+            why_title: "✨ لماذا تختار مجموعة يوسف الرشود؟",
+            why_item1_title: "تنوع المحفظة الاستثمارية",
+            why_item1_text: "يقلل المخاطر ويرفع فرص النمو المستدام",
+            why_item2_title: "هوية بصرية احترافية",
+            why_item2_text: "تعكس قوة العلامة التجارية في كافة القطاعات",
+            why_item3_title: "الالتزام بالجودة المطلقة",
+            why_item3_text: "بدءاً من المواد الخام وصولاً إلى المنتج النهائي أو الخدمة المقدمة",
+            contact_title: "تواصل معنا",
+            contact_address: "المقر الرئيسي: الرياض / النرجس",
+            store_btn: "🛍️ زيارة المتجر الإلكتروني",
+            footer: "© 2025 مجموعة يوسف الرشود (YRG) - جميع الحقوق محفوظة. الريادة والتنوع والاستدامة.",
+            // مفاتيح المدير التنفيذي (العربية)
+            ceo_role: "المدير التنفيذي لمجموعة يوسف الرشود",
+            ceo_name: "أ.م/ يوسف بن محمد بن سعد الرشود",
+            link_yrg: "مجموعة يوسف الرشود",
+            link_personal: "الصفحة الشخصية",
+            link_email_btn: "التواصل عبر الإيميل",
+            ceo_contact_text: "للتواصل مع المدير التنفيذي عبر الإيميل:"
         },
         en: {
-            nav_about: "About Us", nav_sectors: "Sectors", nav_ceo: "CEO", nav_contact: "Contact",
-            hero_tagline: "Leadership • Diversity • Sustainability | Since 2024", pdf_button: "📄 Download Profile (PDF)",
-            ceo_role: "CEO of Yousef Al Rushud Group", ceo_name: "Mr. Yousef M. Al Rushud",
-            link_yrg: "YRG Group X", link_personal: "Personal Page", link_email_btn: "Contact via Email",
-            ceo_contact_text: "Contact the CEO via Email:",
-            intro_title_span: "Group", intro_title: "Introduction",
-            card1_title: "Construction & Real Estate", card1_p: "The executive arm for building the future.",
-            contact_title: "Contact Us", contact_address: "Riyadh / Al Narjis", store_btn: "🛍️ Visit E-Store",
-            footer: "© 2025 YRG Group - All rights reserved."
+            nav_about: "About Us",
+            nav_sectors: "Sectors",
+            nav_ceo: "CEO",
+            nav_why: "Why Choose Us",
+            nav_contact: "Contact",
+            hero_tagline: "Leadership • Diversity • Sustainability | Since 2024",
+            pdf_button: "📄 Download Company Profile (PDF)",
+            intro_title_span: "Introduction",
+            intro_title: "the Group",
+            card1_title: "Construction & Real Estate",
+            card1_sub: '"Building the future with engineering precision"',
+            card1_p: "The executive arm of the group, characterized by:",
+            card1_li1: "Execution of general construction projects with highest safety and quality standards.",
+            card1_li2: "Real estate development and modern complexes.",
+            card1_li3: "Property management according to latest standards to maximize investment value.",
+            card1_li4: "Commitment to timeline and approved technical specifications.",
+            card2_title: "Oud & Perfumes",
+            card2_sub: '"Luxury of Authentic Fragrance"',
+            card2_p: "The beating heart of the group and embodiment of luxury identity:",
+            card2_li1: "Selecting finest natural oud and incense from original sources.",
+            card2_li2: "Exclusive production lines blending oriental authenticity with global modernity.",
+            card2_li3: "Products that reflect sophistication and excellence for luxurious occasions.",
+            card3_title: "Fashion & Clothing",
+            card3_sub: '"The address of elegance and refinement"',
+            card3_p: "Our footprint in the world of contemporary fashion:",
+            card3_li1: "Innovative designs that align with refined taste and keep up with trends.",
+            card3_li2: "Highest quality standards in fabric and material selection.",
+            card3_li3: 'A leading brand in ready-to-wear clothing "YRG".',
+            sectors_title_span: "Our Sectors",
+            sec1_title: "Construction & Real Estate",
+            sec1_tagline: "The Executive and Investment Arm",
+            sec1_p1: "The Construction and Real Estate sector represents the executive and investment arm of YRG Group, specializing in transforming engineering visions into tangible reality characterized by durability and luxury. We combine deep construction expertise with the latest property management technologies to provide integrated real estate solutions.",
+            sec1_li1: "<strong>General Contracting & Construction:</strong> Executing projects of various sizes with highest quality and safety standards.",
+            sec1_li2: "<strong>Real Estate Development:</strong> Building modern residential and commercial complexes that keep pace with future vision.",
+            sec1_li3: "<strong>Property Management:</strong> Management and maintenance services to maximize investment value.",
+            sec1_li4: "<strong>Engineering Consultations:</strong> Supervision and ensuring project execution according to plans and schedules.",
+            sec2_title: "Oud, Incense & Perfumes",
+            sec2_tagline: '"Authentic fragrance with a modern vision"',
+            sec2_p1: "The Oud and Incense sector is the beating heart of the group, offering a unique sensory experience that reshapes the human relationship with oud, by selecting the finest natural ingredients that reflect the ancient Gulf heritage with a touch of global luxury.",
+            sec2_li1: "<strong>Selecting the Finest:</strong> Natural incense sticks from original sources with precise testing for scent and purity.",
+            sec2_li2: "<strong>Exclusive Fragrance Blends:</strong> Blending luxurious oud oil with rare aromatic oils.",
+            sec2_li3: "<strong>Visual Identity (Crown):</strong> The white crown logo on a dark blue background symbolizes royalty and royal quality.",
+            sec2_li4: "<strong>Innovative Presentation:</strong> Luxurious packaging and designs that make our products exceptional gifts.",
+            sec3_title: "Fashion & Clothing",
+            sec3_tagline: "The hallmark of elegance and modern refinement",
+            sec3_p1: "We represent the elegance sector of the group, aiming to present a new concept of fashion that combines modern refinement with unique touches. We believe appearance is a language that expresses personality, so we are keen to design pieces that embody luxury in every detail.",
+            sec3_li1: "<strong>Design & Innovation:</strong> Contemporary designs carrying the YRG identity with highest quality standards.",
+            sec3_li2: "<strong>Catering to Refined Tastes:</strong> Targeting elite customers seeking excellence and exclusive pieces.",
+            sec3_li3: "<strong>Quality & Sustainability:</strong> Precise production stages for long-lasting products that retain their luster.",
+            sec3_li4: "<strong>Unique Shopping Experience:</strong> Sustainable relationship with customers and distinguished services.",
+            sec4_title: "Natural Products & Honey",
+            sec4_tagline: '"Pure food, sustainable health"',
+            sec4_p1: "This sector represents our firm commitment to providing ancestral quality with modern standards. We select the finest types of natural honey and products derived from the earth's bounties, to ensure healthy and pure food that preserves full nutritional and therapeutic value.",
+            sec4_li1: "<strong>Superior Selection:</strong> Honey from the best regions following sustainable and 100% natural beekeeping practices.",
+            sec4_li2: "<strong>Authentic Visual Identity:</strong> A logo combining the symbolism of the traditional 'honey spoon' and elegant Arabic calligraphy.",
+            sec4_li3: "<strong>Product Variety:</strong> A wide range of luxurious honey and natural products for health care.",
+            sec4_li4: "<strong>Trust & Credibility:</strong> Precise packaging without any additives.",
+            sec5_title: "Personal Care & Miswak",
+            sec5_tagline: '"From nature.. a gift for loved ones"',
+            sec5_p1: "One of the essential pillars, we aim to revive natural heritage with a modern touch. We offer luxurious miswak carefully selected to ensure the highest levels of quality and purity.",
+            sec5_li1: "<strong>Authentic Source:</strong> YRG Miswak from the finest natural farms for health and medical benefits.",
+            sec5_li2: "<strong>Quality Standards:</strong> Strict control and perfect packaging that maintains moisture and cleanliness.",
+            sec5_li3: "<strong>Easy Access:</strong> Electronic platforms and yrg.store to serve customers in all regions.",
+            sec5_li4: "<strong>Multiple Options:</strong> Various sizes and types suitable for daily use or as valuable gifts.",
+            sec6_title: "Law & Legal Consultations",
+            sec6_tagline: "The protective pillar of the group",
+            sec6_p1: "We believe justice is the foundation of development. We provide integrated and innovative legal solutions with the highest standards of professionalism and confidentiality, safeguarding rights and achieving legal security for individuals and companies.",
+            sec6_li1: "<strong>Judicial Representation & Pleading:</strong> Defending rights before all courts and judicial bodies.",
+            sec6_li2: "<strong>Legal Consultations:</strong> Proactive advice in commercial, civil, and labor fields.",
+            sec6_li3: "<strong>Contract Drafting & Review:</strong> Preparing international and local agreements to protect investments.",
+            sec6_li4: "<strong>Company Formation & Governance:</strong> Supporting entrepreneurs according to modern regulations.",
+            sec6_li5: "<strong>Inheritances & Family Disputes:</strong> Handling inheritance cases according to Sharia and local regulations.",
+            why_title: "✨ Why Choose YRG Group?",
+            why_item1_title: "Diversified Investment Portfolio",
+            why_item1_text: "Reduces risks and enhances sustainable growth opportunities",
+            why_item2_title: "Professional Visual Identity",
+            why_item2_text: "Reflects the strength of the brand across all sectors",
+            why_item3_title: "Absolute Commitment to Quality",
+            why_item3_text: "From raw materials to final product or service",
+            contact_title: "Contact Us",
+            contact_address: "Head Office: Riyadh / Al Narjis",
+            store_btn: "🛍️ Visit E-Store",
+            footer: "© 2025 Yousef Al Rushud Group (YRG) - All rights reserved. Leadership, Diversity, Sustainability.",
+            // مفاتيح المدير التنفيذي (الإنجليزية)
+            ceo_role: "CEO of Yousef Al Rushud Group",
+            ceo_name: "Mr. Yousef M. Al Rushud",
+            link_yrg: "YRG Group X",
+            link_personal: "Personal Page",
+            link_email_btn: "Contact via Email",
+            ceo_contact_text: "Contact the CEO via Email:"
         }
     };
 
     function setLanguage(lang) {
-        document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+        const htmlElement = document.documentElement;
+        if (lang === 'ar') {
+            htmlElement.setAttribute('dir', 'rtl');
+            htmlElement.setAttribute('lang', 'ar');
+        } else {
+            htmlElement.setAttribute('dir', 'ltr');
+            htmlElement.setAttribute('lang', 'en');
+        }
+
         document.querySelectorAll('[data-key]').forEach(el => {
             const key = el.getAttribute('data-key');
-            if (translations[lang][key]) el.innerText = translations[lang][key];
+            if (translations[lang] && translations[lang][key]) {
+                if (key.includes('li') && translations[lang][key].includes('<strong>')) {
+                    el.innerHTML = translations[lang][key];
+                } else {
+                    el.innerText = translations[lang][key];
+                }
+            }
         });
+
         document.getElementById('lang-ar').classList.toggle('active', lang === 'ar');
         document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+
+        const pdfBtn = document.getElementById('downloadPDFBtn');
+        if (pdfBtn) pdfBtn.innerText = translations[lang].pdf_button;
     }
 
-    document.getElementById('lang-ar').onclick = () => setLanguage('ar');
-    document.getElementById('lang-en').onclick = () => setLanguage('en');
+    document.getElementById('lang-ar').addEventListener('click', () => setLanguage('ar'));
+    document.getElementById('lang-en').addEventListener('click', () => setLanguage('en'));
 
-    document.getElementById('downloadPDFBtn').onclick = () => {
-        const link = document.createElement('a');
-        link.href = 'company-profile1.pdf';
-        link.download = 'YRG_Profile.pdf';
-        link.click();
-    };
+    setLanguage('ar');
+
+    const downloadBtn = document.getElementById('downloadPDFBtn');
+    if (downloadBtn) {
+        downloadBtn.addEventListener('click', function() {
+            const pdfUrl = 'company-profile1.pdf';
+            const link = document.createElement('a');
+            link.href = pdfUrl;
+            link.download = 'YRG_Company_Profile.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    }
 </script>
 </body>
 </html>
